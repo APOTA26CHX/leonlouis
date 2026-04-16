@@ -38,15 +38,19 @@
       bottom: 36px;
       transform: translateX(-50%);
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
     }
 
-    .contact-form {
+    .signup-form {
       display: flex;
       align-items: center;
       gap: 0;
     }
 
-    .contact-form input[type="email"] {
+    .signup-form input[type="email"] {
       width: 250px;
       background: transparent;
       border: none;
@@ -61,14 +65,15 @@
       border-radius: 0;
       -webkit-appearance: none;
       appearance: none;
+      text-align: left;
     }
 
-    .contact-form input[type="email"]::placeholder {
+    .signup-form input[type="email"]::placeholder {
       color: rgba(245, 245, 240, 0.6);
       font-style: italic;
     }
 
-    .contact-form button {
+    .signup-form button {
       margin-left: 18px;
       background: none;
       border: none;
@@ -84,16 +89,22 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    .contact-form button:hover {
+    .signup-form button:hover,
+    .contact-link:hover {
       opacity: 0.68;
     }
 
-    .form-note {
-      margin-top: 10px;
-      color: rgba(245, 245, 240, 0.55);
+    .contact-link {
+      display: inline-block;
+      color: rgba(245, 245, 240, 0.9);
+      text-decoration: none;
       font-family: "Hoefler Text", "Baskerville", "Times New Roman", serif;
-      font-size: 10px;
-      letter-spacing: 1px;
+      font-size: 11px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      transition: opacity 0.25s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .input--hidden {
@@ -103,20 +114,26 @@
     @media (max-width: 768px) {
       .overlay {
         bottom: 28px;
+        gap: 18px;
       }
 
-      .contact-form {
+      .signup-form {
         flex-direction: column;
         gap: 12px;
       }
 
-      .contact-form input[type="email"] {
+      .signup-form input[type="email"] {
         width: 220px;
         text-align: center;
       }
 
-      .contact-form button {
+      .signup-form button {
         margin-left: 0;
+        font-size: 10px;
+        letter-spacing: 4px;
+      }
+
+      .contact-link {
         font-size: 10px;
         letter-spacing: 4px;
       }
@@ -126,9 +143,10 @@
 <body>
   <div class="background">
     <div class="overlay">
+
       <form
         id="sib-form"
-        class="contact-form"
+        class="signup-form"
         method="POST"
         action="https://aa3c05eb.sibforms.com/serve/MUIFAKOjbhlVY0jBP43VRJLMw6dSne-7Ijd_ghkS3B6pgP6uYxfayUpBBrDZBcvVRusaux70TS7WnBjhh3X36gy8n4zzngWDp20C-I1UNWH7WcS0VlZK2w5kENkyqGGqVwW-GgJmfRcGfPTY7R-pXdNuNQ-Pfhv-4DsL-Vm3ad_8r2IfeHstGbfTMEHziciRtMWbNSvUlBXFOwJA0g=="
       >
@@ -140,13 +158,15 @@
           placeholder="Enter your email"
           required
         />
-
-        <button type="submit">Contact</button>
+        <button type="submit">Subscribe</button>
 
         <input type="text" name="email_address_check" value="" class="input--hidden" />
         <input type="hidden" name="locale" value="en" />
         <input type="hidden" name="html_type" value="simple" />
       </form>
+
+      <a href="mailto:leonlouisjoergensen@gmail.com" class="contact-link">Contact</a>
+
     </div>
   </div>
 </body>
