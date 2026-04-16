@@ -1,52 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leon Louis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leon Louis</title>
 
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+    }
 
-.background {
-  background: url('image.jpg') no-repeat center center/cover;
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
+    body {
+      overflow: hidden;
+    }
 
-.overlay {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+    .background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.18) 0%,
+          rgba(0, 0, 0, 0.08) 35%,
+          rgba(0, 0, 0, 0.22) 100%
+        ),
+        url('image.jpg') no-repeat center center / cover;
+    }
 
-.contact-link {
-  color: white;
-  text-decoration: none;
-  font-family: "Hoefler Text", "Times New Roman", serif;
-  font-size: 12px;
-  letter-spacing: 6px;
-  transition: opacity 0.3s ease;
-}
+    .overlay {
+      position: absolute;
+      left: 50%;
+      bottom: 36px;
+      transform: translateX(-50%);
+      text-align: center;
+    }
 
-.contact-link:hover {
-  opacity: 0.6;
-}
-</style>
+    .contact-link {
+      display: inline-block;
+      color: rgba(245, 245, 240, 0.9);
+      text-decoration: none;
+      font-family: "Hoefler Text", "Baskerville", "Times New Roman", serif;
+      font-size: 11px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      transition: opacity 0.25s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .contact-link:hover {
+      opacity: 0.68;
+    }
+
+    @media (max-width: 768px) {
+      .overlay {
+        bottom: 28px;
+      }
+
+      .contact-link {
+        font-size: 10px;
+        letter-spacing: 5px;
+      }
+    }
+  </style>
 </head>
-
 <body>
   <div class="background">
     <div class="overlay">
-      <a href="mailto:leonlouisjoergensen@gmail.com" class="contact-link">
-        CONTACT
-      </a>
+      <a href="mailto:leonlouisjoergensen@gmail.com" class="contact-link">Contact</a>
     </div>
   </div>
 </body>
