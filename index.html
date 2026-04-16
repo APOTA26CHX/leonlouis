@@ -6,41 +6,49 @@
 <title>Leon Louis</title>
 
 <style>
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .background {
-    background: url('image.jpg') no-repeat center center/cover;
-    height: 100%;
-    width: 100%;
-    position: relative;
+  background: url('image.jpg') no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    color: white;
-    font-size: 14px;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.overlay .title {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.overlay .info {
+  font-size: 14px;
+  line-height: 1.8;
 }
 </style>
 </head>
 
 <body>
-
-<div class="background">
+  <div class="background">
     <div class="overlay">
-        <div>Leon Louis</div>
-        <div>+45 50888808</div>
-        <div>leonlouisjoergensen@gmail.com</div>
+      <div class="title">CONTACT</div>
+      <div class="info">
+        +45 50888808<br>
+        leonlouisjoergensen@gmail.com
+      </div>
     </div>
-</div>
-
+  </div>
 </body>
 </html>
