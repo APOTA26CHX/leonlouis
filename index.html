@@ -183,17 +183,25 @@
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const emailInput = form.querySelector('input[name="EMAIL"]');
 
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      mode: 'no-cors'
-    }).then(() => {
-      form.style.display = 'none';
+    fetch("https://aa3c05eb.sibforms.com/serve/MUIFAKOjbhlVY0jBP43VRJLMw6dSne-7Ijd_ghkS3B6pgP6uYxfayUpBBrDZBcvVRusaux70TS7WnBjhh3X36gy8n4zzngWDp20C-I1UNWH7WcS0VlZK2w5kENkyqGGqVwW-GgJmfRcGfPTY7R-pXdNuNQ-Pfhv-4DsL-Vm3ad_8r2IfeHstGbfTMEHziciRtMWbNSvUlBXFOwJA0g==", {
+      method: "POST",
+      body: new URLSearchParams({
+        EMAIL: emailInput.value,
+        locale: "en",
+        html_type: "simple"
+      }),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+    })
+    .then(() => {
+      form.reset();
       success.style.display = 'block';
-    }).catch(() => {
-      alert('Something went wrong');
+    })
+    .catch(() => {
+      alert("Something went wrong");
     });
   });
 </script>
